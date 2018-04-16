@@ -46,7 +46,14 @@ public class FactureService {
         return factureRepository.findById(id)
                 .map(this::toDTO)
                 .orElseThrow(() ->
+<<<<<<< HEAD
                 new IllegalArgumentException("Facture inconnu " + id)
         );
     }
 }
+=======
+                        new IllegalArgumentException("Facture inconnu " + id)
+                );
+    }
+}
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4

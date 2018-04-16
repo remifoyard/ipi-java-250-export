@@ -13,10 +13,21 @@ public class Client {
     private Long id;
 
     @Column
+<<<<<<< HEAD
     private String prenom;
 
     @Column
     private String nom;
+=======
+    private String nom;
+
+    @Column
+    private String prenom;
+
+    @Column
+    private String mail;
+
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4
 
     public Long getId() {
         return id;
@@ -26,6 +37,17 @@ public class Client {
         this.id = id;
     }
 
+<<<<<<< HEAD
+=======
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4
     public String getPrenom() {
         return prenom;
     }
@@ -34,11 +56,20 @@ public class Client {
         this.prenom = prenom;
     }
 
+<<<<<<< HEAD
     public String getNom() {
         return nom;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
+=======
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4
     }
 }

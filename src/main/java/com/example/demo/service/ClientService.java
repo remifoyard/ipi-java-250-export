@@ -22,4 +22,8 @@ public class ClientService {
     public List<ClientDTO> findAllClients() {
         return clientRepository.findAll().stream().map(c-> clientMapper.map(c)).collect(toList());
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4
