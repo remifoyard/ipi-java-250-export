@@ -25,4 +25,8 @@ public class ClientDTO {
     public void setNom(String nom) {
         this.nom = nom;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 79a558fc43e0fc48d6ca8ee66f53c103f1b978a4
