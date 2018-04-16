@@ -6,11 +6,13 @@ import com.example.demo.service.ClientService;
 import com.example.demo.service.FactureService;
 import com.example.demo.service.export.ExportCSVService;
 import com.example.demo.service.export.ExportPDFITextService;
+import com.example.demo.service.export.ExportXLSXSService;
 import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import java.io.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,10 +31,13 @@ public class ExportController {
     private ExportCSVService exportCSVService;
 
     @Autowired
-    private FactureService factureService;
+    private ExportXLSXSService exportXLSXService;
 
     @Autowired
-    private ExportPDFITextService exportPDFITextService;
+    private FactureService factureService;
+
+    //@Autowired
+    //private ExportPDFITextService exportPDFITextService;
 
     @GetMapping("/clients/csv")
     public void clientsCSV(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -42,6 +47,14 @@ public class ExportController {
         exportCSVService.export(response.getWriter(), clients);
     }
 
+    @GetMapping("/clients/xlsx")
+    public void clientsXLSX(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setHeader("Content-Disposition", "attachment; filename=\"clients.xlsx\"");
+        List<ClientDTO> clients = clientService.findAllClients();
+        exportXLSXService.export(response.getOutputStream(), clients);
+    }
+
+/*
     @GetMapping("/factures/{id}/pdf")
     public void facturePDF(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException {
         response.setContentType("application/pdf");
@@ -49,5 +62,5 @@ public class ExportController {
         FactureDTO facture = factureService.findById(id);
         exportPDFITextService.export(response.getOutputStream(), facture);
     }
-
+*/
 }
