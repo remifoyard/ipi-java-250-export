@@ -23,7 +23,7 @@ public class ExportXLXSPoiServiceTest {
         tempFile.createNewFile();
         FileOutputStream fos = new FileOutputStream(tempFile);
 
-        ExportXLXSPoiService exportXLXSPoiService = new ExportXLXSPoiService();
+        ExportXLSXSService exportXLXSPoiService = new ExportXLSXSService();
         exportXLXSPoiService.export(fos, clientDTOS);
 
         fos.close();
