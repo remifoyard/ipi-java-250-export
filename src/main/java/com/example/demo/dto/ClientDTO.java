@@ -12,6 +12,16 @@ public class ClientDTO {
 
     private Long id;
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    private Integer age;
+
     public Long getId() {
         return id;
     }

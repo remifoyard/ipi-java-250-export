@@ -12,8 +12,10 @@ import java.util.*;
 public class ExportCSVService {
 
     public void export(Writer printWriter, List<ClientDTO> clients) throws IOException {
+        //printWriter.addColumn("Nom", getNom);
         printWriter.write("Nom;");
-        printWriter.write("Prénom\n");
+        printWriter.write("Prénom;");
+        printWriter.write("Age\n");
         for(ClientDTO cl : clients){
             String nom = cl.getNom();
             String nomValide = nom.replace(";", " ");
@@ -21,7 +23,9 @@ public class ExportCSVService {
             String prenom = cl.getPrenom();
             String prenomValide = prenom.replace(";", " ");
 
-            printWriter.write(nomValide+";"+prenomValide+"\n");
+            Integer age = cl.getAge();
+
+            printWriter.write(nomValide+";"+prenomValide+";"+age+"\n");
         }
     }
 }

@@ -22,16 +22,19 @@ public class InitData {
         Client client  = new Client();
         client.setNom("PETRI;LLO");
         client.setPrenom("Alexandre");
+        client.setAge(28);
         em.persist(client);
 
         Client client2  = new Client();
         client2.setNom("FOYARD");
         client2.setPrenom("Remi");
+        client2.setAge(30);
         em.persist(client2);
 
         Client client3  = new Client();
         client3.setNom("PINTEAUX");
         client3.setPrenom("Julien");
+        client3.setAge(26);
         em.persist(client3);
 
         Article article = new Article();

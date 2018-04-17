@@ -11,6 +11,7 @@ public class ClientMapper {
         dto.setNom(entity.getNom());
         dto.setPrenom(entity.getPrenom());
         dto.setId(entity.getId());
+        dto.setAge(entity.getAge());
         return dto;
     }
 }

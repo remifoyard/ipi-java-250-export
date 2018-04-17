@@ -18,6 +18,17 @@ public class Client {
     @Column
     private String nom;
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Column
+    private Integer age;
+
     public Long getId() {
         return id;
     }
