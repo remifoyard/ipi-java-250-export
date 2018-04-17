@@ -67,8 +67,8 @@ public class ExportController {
 
     @GetMapping("/client/{id}/xlsx")
     public void clientXLSX(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException {
-        response.setHeader("Content-Disposition", "attachment; filename=\"client.xlsx\"");
         ClientDTO client = clientService.findById(id);
+        response.setHeader("Content-Disposition", "attachment; filename=\""+client.getNom()+"_"+client.getPrenom()+"_Factures.xlsx\"");
         List<Facture> factures = factureService.findByClientId(id);
         exportXLSXService2.export(response.getOutputStream(), client, factures);
     }
